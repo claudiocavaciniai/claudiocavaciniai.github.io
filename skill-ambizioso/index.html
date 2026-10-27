@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="it"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Skill "ambizioso" e prompt · Claudio Cavacini</title>
+<meta name="description" content="La skill ambizioso per Claude e i tre prompt del video Diventa l'1%.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap">
+<style>
+:root{--bg:#FAF9F5;--cream:#F0EEE6;--line:#E3DFD3;--ink:#141413;--mute:#6B6A63;--amber:#CC6B2C}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.55}
+.w{max-width:760px;margin:0 auto;padding:56px 20px 64px}
+a.back{color:var(--mute);text-decoration:none;font-weight:600;font-size:15px}
+.k{font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-top:28px}
+h1{font-size:clamp(34px,6.5vw,52px);font-weight:900;letter-spacing:-.03em;line-height:1.05;margin:10px 0 14px}
+h2{font-size:24px;font-weight:800;margin:44px 0 10px}
+p{margin:0 0 14px}.mute{color:var(--mute)}
+.mute a{color:var(--ink);font-weight:600}
+.btn{display:inline-block;background:var(--amber);color:#fff;font-weight:800;text-decoration:none;padding:14px 22px;border-radius:12px;margin:6px 10px 6px 0}
+.btn.alt{background:#fff;color:var(--ink);border:1px solid var(--line)}
+ol{padding-left:22px}li{margin-bottom:8px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:14px 0}
+.card .t{font-weight:800;margin-bottom:8px}
+.card .lv{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--amber)}
+pre{white-space:pre-wrap;word-wrap:break-word;background:var(--cream);border-radius:10px;padding:14px;margin:0 0 10px;font:14px/1.5 ui-monospace,Menlo,monospace}
+button.cp{font:600 14px Inter;border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 12px;cursor:pointer}
+footer{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);color:var(--mute);font-size:15px}
+footer a{color:var(--ink);font-weight:600}
+</style></head><body><div class="w">
+<a class="back" href="../">← Tutti i materiali</a>
+<div class="k">Video · Diventa l'1%</div>
+<h1>La skill "ambizioso" e i tre prompt</h1>
+<p class="mute">Ispirati al tutorial di Felix Rieseberg, <a href="https://felixrieseberg.com/how-to-be-more-ambitious-a-tutorial-for-humans-with-models/">"How to be more ambitious: A tutorial for humans with models"</a>. Altitudine, profondità, ampiezza.</p>
+
+<h2>La skill</h2>
+<p>Una skill è un file di istruzioni che Claude usa quando serve. Questa, prima di eseguire un compito, ti propone la versione più ambiziosa, livello per livello. Si attiva quando scrivi "sii ambizioso" o "fallo come l'1%".</p>
+<a class="btn" href="ambizioso.zip" download>Scarica la skill (.zip)</a>
+<a class="btn alt" href="SKILL.md">Leggi il testo</a>
+<p class="mute" style="margin-top:14px">Come installarla: nelle impostazioni di Claude apri la sezione delle skill e carica il file zip così com'è, senza scompattarlo. Le skill richiedono un piano che le supporta.</p>
+
+<h2>I tre prompt</h2>
+<div class="card"><div class="lv">Livello 1 · Altitudine</div><div class="t">Chiedi il risultato, non il compito</div>
+<pre id="p1">Qual è l'obiettivo dietro questo compito? Proponimi come raggiungerlo direttamente, invece di fare solo il compito.</pre><button class="cp" data-t="p1">Copia</button></div>
+<div class="card"><div class="lv">Livello 2 · Profondità</div><div class="t">Lavora come il migliore del campo</div>
+<pre id="p2">Voglio una versione più profonda di questo compito, non più grande. Prima di riscriverlo: (1) dimmi cosa farebbe qui un grande professionista del campo che io non sto chiedendo; (2) indica il materiale più grezzo da cui partirebbe, invece di quello già digerito per me; (3) indica i metodi e gli strumenti che userebbe; (4) dimmi cosa, oltre a te e a me, dimostrerebbe che il risultato è giusto. Poi riscrivi il mio prompt per chiedere esattamente questo.</pre><button class="cp" data-t="p2">Copia</button>
+<p class="mute" style="margin:10px 0 0;font-size:14px">Traduzione del prompt di Felix Rieseberg.</p></div>
+<div class="card"><div class="lv">Livello 3 · Ampiezza</div><div class="t">Chiama in squadra mestieri lontani</div>
+<pre id="p3">Descrivi questo lavoro con i verbi, non con i nomi. Poi dimmi quali tre mestieri lontani dal mio cambierebbero il risultato, e cosa farebbe concretamente ognuno.</pre><button class="cp" data-t="p3">Copia</button></div>
+
+<footer>Dal canale YouTube <a href="https://www.youtube.com/@claudiocavaciniAI">@claudiocavaciniAI</a> · AI per chi lavora</footer>
+</div>
+<script>
+document.querySelectorAll('button.cp').forEach(b=>b.onclick=async()=>{const t=document.getElementById(b.dataset.t).innerText;try{await navigator.clipboard.writeText(t);b.textContent='Copiato ✓';setTimeout(()=>b.textContent='Copia',1500)}catch(e){}});
+</script></body></html>
